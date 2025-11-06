@@ -26,10 +26,10 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
           {/* Navigation links */}
           <nav className="flex items-center gap-6">
-            <Link to="/" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <Link to="/" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Home
             </Link>
-            <Link to="/explore" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <Link to="/explore" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Explore
             </Link>
           </nav>
