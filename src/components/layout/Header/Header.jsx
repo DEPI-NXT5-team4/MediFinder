@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm py-4 px-4 sm:px-6 relative">
       <div className="container mx-auto flex items-center justify-between">
-        
+
         {/* Logo */}
         <div className="flex items-baseline gap-1">
           <h1 className="text-xl sm:text-2xl font-black text-gray-900">CuraTrack</h1>
@@ -45,7 +45,7 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search for your medicine"
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                className="w-full pl-10 pr-4 py-2 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
               />
             </div>
           </div>
@@ -94,7 +94,7 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <button 
+          <button
             className="p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={toggleMenu}
           >
@@ -114,7 +114,7 @@ const Header = () => {
                   <h1 className="text-xl font-black text-gray-900">CuraTrack</h1>
                   <sup className="text-xs font-light -mt-1">©</sup>
                 </div>
-                <button 
+                <button
                   className="p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
                   onClick={closeMenu}
                 >
@@ -129,8 +129,8 @@ const Header = () => {
                 <div className="flex flex-col space-y-4">
                   {/* Navigation Links */}
                   <div className="flex flex-col space-y-3">
-                    <Link 
-                      to="/" 
+                    <Link
+                      to="/"
                       className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
                       onClick={closeMenu}
                     >
@@ -139,8 +139,8 @@ const Header = () => {
                       </svg>
                       Home
                     </Link>
-                    <Link 
-                      to="/explore" 
+                    <Link
+                      to="/explore"
                       className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
                       onClick={closeMenu}
                     >
@@ -162,7 +162,7 @@ const Header = () => {
                       <input
                         type="text"
                         placeholder="Search for your medicine"
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                        className="w-full pl-10 pr-4 py-3 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                       />
                     </div>
                   </div>

@@ -1,1 +1,19 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
+@theme {
+  --font-geist: "Geist", sans-serif;
+  --color-primary: #171717;
+  --color-secondary: ##f5f5f5;
+  --color-foreground: #0a0a0a;
+  --color-muted-foreground: #737373;
+}
+
+/* Optional utility classes for direct usage */
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+html {
+  scroll-behavior: smooth;
+}
