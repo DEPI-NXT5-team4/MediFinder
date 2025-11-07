@@ -9,10 +9,6 @@
   --color-muted-foreground: #737373;
 }
 
-/* Optional utility classes for direct usage */
-.font-geist {
-  font-family: var(--font-geist);
-}
 
 html {
   scroll-behavior: smooth;

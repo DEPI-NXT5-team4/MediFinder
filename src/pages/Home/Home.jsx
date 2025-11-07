@@ -38,7 +38,7 @@ const Home = () => {
             <input
               type="text"
               placeholder="Search for your medicines.."
-              className="w-full pl-12 pr-6 py-3 sm:py-4 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg shadow-lg bg-white"
+              className="w-full pl-12 pr-6 py-3 sm:py-4 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg shadow-lg bg-white text-muted-foreground"
             />
           </div>
         </div>
