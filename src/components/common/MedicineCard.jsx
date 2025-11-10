@@ -1,9 +1,27 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
 import { useFav } from "../../context/useFav";
+import { useNavigate } from "react-router-dom";
 
 const MedicineCard = ({ name, rating, price, image, id }) => {
-    const { addToFav, removeFromFav, isFavored, addToCart } = useFav();
-    
+    const { user, addToFav, removeFromFav, isFavored, addToCart } = useFav();
+    const navigate = useNavigate();
+
+    const handleAddToFav = () => {
+        if (!user) {
+            navigate('/login');
+            return;
+        }
+        isFavored(id) ? removeFromFav(id) : addToFav({ id, name, rating, price, image });
+    };
+
+    const handleAddToCart = () => {
+        if (!user) {
+            navigate('/login');
+            return;
+        }
+        addToCart({ id, name, rating, price, image });
+    };
+
     return (
         <div className="bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
             <div className="relative">
@@ -16,15 +34,15 @@ const MedicineCard = ({ name, rating, price, image, id }) => {
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 flex flex-col gap-1 sm:gap-2">
                     <button 
                         className="w-6 h-6 p-2 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors"
-                        onClick={() => addToCart({ id, name, rating, price, image })}
+                        onClick={handleAddToCart}
+                        title={user ? "Add to cart" : "Login to add to cart"}
                     >
                         <ShoppingCart className="text-muted-foreground w-4 h-4" />
                     </button>
                     <button 
                         className="w-6 h-6 p-2 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors"
-                        onClick={() => {
-                            isFavored(id) ? removeFromFav(id) : addToFav({ id, name, rating, price, image });
-                        }}
+                        onClick={handleAddToFav}
+                        title={user ? "Add to favorites" : "Login to add to favorites"}
                     >
                         <Heart 
                             className="text-muted-foreground w-4 h-4" 

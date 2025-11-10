@@ -98,7 +98,7 @@ const Header = () => {
                     onClick={() => setIsUserMenuOpen(false)}
                   >
                     <User className="w-4 h-4" />
-                    Profile
+                    {user.fullName}
                   </Link>
                   <Link 
                     to="/favorites" 
@@ -220,7 +220,7 @@ const Header = () => {
                           onClick={closeMenu}
                         >
                           <User className="w-5 h-5" />
-                          Profile
+                           {user.fullName}
                         </Link>
                         <Link
                           to="/favorites"
