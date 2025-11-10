@@ -1,23 +1,28 @@
-import { Heart, Search, ShoppingCart } from 'lucide-react';
+import { Heart, Search, ShoppingCart, User, LogOut } from 'lucide-react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useFav } from '../../../context/useFav';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const { user, logout, favCount, cartCount } = useFav();
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+  const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  const handleLogout = () => {
+    logout();
+    setIsUserMenuOpen(false);
+    navigate('/');
   };
 
   return (
     <header className="bg-white shadow-sm py-4 px-4 sm:px-6 relative">
       <div className="container mx-auto flex items-center justify-between">
 
-        {/* Logo */}
         {/* Logo */}
         <Link to="/" className="flex items-baseline gap-1">
           <h1 className="text-xl sm:text-2xl font-black text-gray-900">CuraTrack</h1>
@@ -26,7 +31,6 @@ const Header = () => {
 
         {/* Desktop Navigation & Search & Icons */}
         <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
-          {/* Navigation links */}
           <nav className="flex items-center gap-6">
             <Link to="/" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Home
@@ -36,11 +40,10 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Search Bar */}
           <div className="flex-1 max-w-md">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="text-muted-foreground" />
+                <Search className="text-muted-foreground w-5 h-5" />
               </div>
               <input
                 type="text"
@@ -51,43 +54,110 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Desktop Icons & Login */}
+        {/* Desktop Icons */}
         <div className="hidden md:flex items-center gap-4">
-          {/* Shopping basket */}
-          <div className="relative">
-            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
-              <ShoppingCart className="text-muted-foreground w-8" />
-            </button>
-          </div>
-
           {/* Favorites */}
-          <div className="relative">
+          <Link to="/favorites" className="relative">
             <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
-              <Heart className="text-muted-foreground w-8" />
+              <Heart className="text-muted-foreground w-5 h-5" />
+              {favCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {favCount}
+                </span>
+              )}
             </button>
-          </div>
+          </Link>
 
-          {/* Login */}
-          <button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-600 transition-colors font-medium">
-            Login
-          </button>
+          {/* Shopping Cart */}
+          <Link to="/cart" className="relative">
+            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+              <ShoppingCart className="text-muted-foreground w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+          </Link>
+
+          {/* User Menu */}
+          {user ? (
+            <div className="relative">
+              <button 
+                onClick={toggleUserMenu}
+                className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
+              >
+                <User className="text-muted-foreground w-5 h-5" />
+              </button>
+
+              {isUserMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50">
+                  <Link 
+                    to="/profile" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsUserMenuOpen(false)}
+                  >
+                    <User className="w-4 h-4" />
+                    Profile
+                  </Link>
+                  <Link 
+                    to="/favorites" 
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsUserMenuOpen(false)}
+                  >
+                    <Heart className="w-4 h-4" />
+                    Favorites
+                    {favCount > 0 && (
+                      <span className="ml-auto bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        {favCount}
+                      </span>
+                    )}
+                  </Link>
+                  <button 
+                    onClick={handleLogout}
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors w-full text-left text-red-600"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link 
+              to="/login" 
+              className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-600 transition-colors font-medium"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
         {/* Mobile Icons & Menu Button */}
         <div className="flex md:hidden items-center gap-3">
-          {/* Shopping basket icon - Mobile */}
-          <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
-            <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
+          {/* Favorites - Mobile */}
+          <Link to="/favorites" className="relative">
+            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+              <Heart className="text-muted-foreground w-5 h-5" />
+              {favCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {favCount}
+                </span>
+              )}
+            </button>
+          </Link>
 
-          {/* Favorites icon - Mobile */}
-          <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
-            <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
+          {/* Shopping Cart - Mobile */}
+          <Link to="/cart" className="relative">
+            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+              <ShoppingCart className="text-muted-foreground w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+          </Link>
 
           {/* Mobile menu button */}
           <button
@@ -100,11 +170,10 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Appears when menu button is clicked */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-40 md:hidden">
             <div className="absolute top-0 left-0 right-0 bg-white shadow-lg z-50">
-              {/* Menu Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200">
                 <div className="flex items-baseline gap-1">
                   <h1 className="text-xl font-black text-gray-900">CuraTrack</h1>
@@ -120,10 +189,8 @@ const Header = () => {
                 </button>
               </div>
 
-              {/* Menu Content */}
               <div className="p-4">
                 <div className="flex flex-col space-y-4">
-                  {/* Navigation Links */}
                   <div className="flex flex-col space-y-3">
                     <Link
                       to="/"
@@ -145,15 +212,50 @@ const Header = () => {
                       </svg>
                       Explore
                     </Link>
+                    {user && (
+                      <>
+                        <Link
+                          to="/profile"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <User className="w-5 h-5" />
+                          Profile
+                        </Link>
+                        <Link
+                          to="/favorites"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <Heart className="w-5 h-5" />
+                          Favorites
+                          {favCount > 0 && (
+                            <span className="ml-auto bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                              {favCount}
+                            </span>
+                          )}
+                        </Link>
+                        <Link
+                          to="/cart"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <ShoppingCart className="w-5 h-5" />
+                          Cart
+                          {cartCount > 0 && (
+                            <span className="ml-auto bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                              {cartCount}
+                            </span>
+                          )}
+                        </Link>
+                      </>
+                    )}
                   </div>
 
-                  {/* Mobile Search Bar in Menu */}
                   <div className="px-2">
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+                        <Search className="h-5 w-5 text-gray-400" />
                       </div>
                       <input
                         type="text"
@@ -163,11 +265,23 @@ const Header = () => {
                     </div>
                   </div>
 
-                  {/* Login Button for Mobile */}
                   <div className="pt-4 border-t border-gray-200">
-                    <button className="bg-gray-900 text-white w-full py-3 rounded-full hover:bg-gray-600 transition-colors font-medium">
-                      Login / Sign Up
-                    </button>
+                    {user ? (
+                      <button 
+                        onClick={handleLogout}
+                        className="bg-red-600 text-white w-full py-3 rounded-full hover:bg-red-700 transition-colors font-medium text-center block"
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <Link 
+                        to="/login" 
+                        className="bg-gray-900 text-white w-full py-3 rounded-full hover:bg-gray-600 transition-colors font-medium text-center block"
+                        onClick={closeMenu}
+                      >
+                        Login / Sign Up
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

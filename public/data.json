@@ -53,8 +53,13 @@
         "name": "Cardiovascular",
         "slug": "cardiovascular",
         "size": "medium"
+      },
+      {
+        "id": 7,
+        "name": "Anti-Inflammatory Drugs",
+        "slug": "anti-inflammatory",
+        "size": "medium"
       }
-    
     ]
   },
   "medicines": [

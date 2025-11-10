@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MedicineCard from '../../components/common/MedicineCard';
+
 const Explore = () => {
-  const [data, setData] = useState({ categories: { exploreCategories: [] }, medicines: [] });
+  const [data, setData] = useState({ categories: { exploreCategories: [], homeCategories: [] }, medicines: [] });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +18,15 @@ const Explore = () => {
       });
   }, []);
 
-
-
+  const getCategoryName = (categoryId) => {
+    const exploreCat = data.categories.exploreCategories.find(cat => cat.id === categoryId);
+    if (exploreCat) return exploreCat.name;
+    
+    const homeCat = data.categories.homeCategories.find(cat => cat.id === categoryId);
+    if (homeCat) return homeCat.name;
+    
+    return `Category ${categoryId}`;
+  };
 
   if (loading) {
     return (
@@ -31,6 +39,8 @@ const Explore = () => {
       </div>
     );
   }
+
+  const allCategoryIds = [...new Set(data.medicines.map(med => med.categoryId))];
 
   return (
     <div className="min-h-screen bg-gray-50 py-6 sm:py-8">
@@ -52,10 +62,10 @@ const Explore = () => {
           </div>
         </div>
 
-        {/* Pharmacy departments*/}
-        {data.categories.exploreCategories.map(category => {
+        {/* Pharmacy departments */}
+        {allCategoryIds.map(categoryId => {
           const categoryMedicines = data.medicines.filter(medicine =>
-            medicine.categoryId === category.id
+            medicine.categoryId === categoryId
           );
 
           // Only the first 6 drugs per category
@@ -64,8 +74,10 @@ const Explore = () => {
           if (displayedMedicines.length === 0) return null;
 
           return (
-            <div key={category.id} className="mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">{category.name}</h2>
+            <div key={categoryId} className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">
+                {getCategoryName(categoryId)}
+              </h2>
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
                 {displayedMedicines.map(medicine => (
                   <MedicineCard
@@ -74,6 +86,7 @@ const Explore = () => {
                     rating={medicine.rating}
                     price={medicine.price}
                     image={medicine.image}
+                    id={medicine.id}
                   />
                 ))}
               </div>
