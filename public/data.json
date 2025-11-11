@@ -7,7 +7,7 @@
         "slug": "analgesics-antipyretics"
       },
       {
-        "id": 2, 
+        "id": 2,
         "name": "Antibiotics",
         "slug": "antibiotics"
       },
@@ -26,7 +26,7 @@
       },
       {
         "id": 2,
-        "name": "Respiratory / Bronchodilators", 
+        "name": "Respiratory / Bronchodilators",
         "slug": "respiratory-bronchodilators",
         "size": "large"
       },
@@ -39,7 +39,7 @@
       {
         "id": 4,
         "name": "Gastrointestinal",
-        "slug": "gastrointestinal", 
+        "slug": "gastrointestinal",
         "size": "small"
       },
       {
@@ -67,7 +67,7 @@
       "id": 1,
       "name": "Panadol",
       "categoryId": 1,
-      "price": 50.00,
+      "price": 50.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -75,7 +75,7 @@
       "id": 2,
       "name": "Aspirin",
       "categoryId": 1,
-      "price": 30.00,
+      "price": 30.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -83,7 +83,7 @@
       "id": 3,
       "name": "Ibuprofen",
       "categoryId": 1,
-      "price": 40.00,
+      "price": 40.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -91,7 +91,7 @@
       "id": 4,
       "name": "Paracetamol",
       "categoryId": 1,
-      "price": 25.00,
+      "price": 25.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -99,7 +99,7 @@
       "id": 5,
       "name": "Diclofenac",
       "categoryId": 1,
-      "price": 35.00,
+      "price": 35.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -107,7 +107,7 @@
       "id": 6,
       "name": "Naproxen",
       "categoryId": 1,
-      "price": 45.00,
+      "price": 45.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -115,7 +115,7 @@
       "id": 7,
       "name": "Amoxicillin",
       "categoryId": 2,
-      "price": 100.00,
+      "price": 100.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -123,7 +123,7 @@
       "id": 8,
       "name": "Azithromycin",
       "categoryId": 2,
-      "price": 120.00,
+      "price": 120.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -131,7 +131,7 @@
       "id": 9,
       "name": "Ciprofloxacin",
       "categoryId": 2,
-      "price": 80.00,
+      "price": 80.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -139,7 +139,7 @@
       "id": 10,
       "name": "Doxycycline",
       "categoryId": 2,
-      "price": 90.00,
+      "price": 90.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -147,7 +147,7 @@
       "id": 11,
       "name": "Erythromycin",
       "categoryId": 2,
-      "price": 70.00,
+      "price": 70.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -155,7 +155,7 @@
       "id": 12,
       "name": "Penicillin",
       "categoryId": 2,
-      "price": 60.00,
+      "price": 60.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -163,7 +163,7 @@
       "id": 13,
       "name": "Omeprazole",
       "categoryId": 3,
-      "price": 85.00,
+      "price": 85.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -171,7 +171,7 @@
       "id": 14,
       "name": "Ranitidine",
       "categoryId": 3,
-      "price": 55.00,
+      "price": 55.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -179,7 +179,7 @@
       "id": 15,
       "name": "Loperamide",
       "categoryId": 3,
-      "price": 40.00,
+      "price": 40.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -187,7 +187,7 @@
       "id": 16,
       "name": "Metoclopramide",
       "categoryId": 3,
-      "price": 65.00,
+      "price": 65.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -195,7 +195,7 @@
       "id": 17,
       "name": "Domperidone",
       "categoryId": 3,
-      "price": 75.00,
+      "price": 75.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -203,7 +203,7 @@
       "id": 18,
       "name": "Esomeprazole",
       "categoryId": 3,
-      "price": 95.00,
+      "price": 95.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -211,7 +211,7 @@
       "id": 19,
       "name": "Ventolin",
       "categoryId": 4,
-      "price": 120.00,
+      "price": 120.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -219,7 +219,7 @@
       "id": 20,
       "name": "Salbutamol",
       "categoryId": 4,
-      "price": 110.00,
+      "price": 110.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -227,7 +227,7 @@
       "id": 21,
       "name": "Budesonide",
       "categoryId": 4,
-      "price": 130.00,
+      "price": 130.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -235,7 +235,7 @@
       "id": 22,
       "name": "Theophylline",
       "categoryId": 4,
-      "price": 100.00,
+      "price": 100.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -243,7 +243,7 @@
       "id": 23,
       "name": "Montelukast",
       "categoryId": 4,
-      "price": 140.00,
+      "price": 140.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -251,7 +251,7 @@
       "id": 24,
       "name": "Ipratropium",
       "categoryId": 4,
-      "price": 125.00,
+      "price": 125.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -259,7 +259,7 @@
       "id": 25,
       "name": "Atorvastatin",
       "categoryId": 5,
-      "price": 150.00,
+      "price": 150.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -267,7 +267,7 @@
       "id": 26,
       "name": "Simvastatin",
       "categoryId": 5,
-      "price": 135.00,
+      "price": 135.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -275,7 +275,7 @@
       "id": 27,
       "name": "Metformin",
       "categoryId": 5,
-      "price": 80.00,
+      "price": 80.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -283,7 +283,7 @@
       "id": 28,
       "name": "Glibenclamide",
       "categoryId": 5,
-      "price": 65.00,
+      "price": 65.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -291,7 +291,7 @@
       "id": 29,
       "name": "Insulin",
       "categoryId": 5,
-      "price": 200.00,
+      "price": 200.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -299,7 +299,7 @@
       "id": 30,
       "name": "Pioglitazone",
       "categoryId": 5,
-      "price": 110.00,
+      "price": 110.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -307,7 +307,7 @@
       "id": 31,
       "name": "Amlodipine",
       "categoryId": 6,
-      "price": 95.00,
+      "price": 95.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -315,7 +315,7 @@
       "id": 32,
       "name": "Lisinopril",
       "categoryId": 6,
-      "price": 85.00,
+      "price": 85.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -323,7 +323,7 @@
       "id": 33,
       "name": "Propranolol",
       "categoryId": 6,
-      "price": 75.00,
+      "price": 75.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -331,7 +331,7 @@
       "id": 34,
       "name": "Digoxin",
       "categoryId": 6,
-      "price": 60.00,
+      "price": 60.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -339,7 +339,7 @@
       "id": 35,
       "name": "Warfarin",
       "categoryId": 6,
-      "price": 45.00,
+      "price": 45.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -347,7 +347,7 @@
       "id": 36,
       "name": "Clopidogrel",
       "categoryId": 6,
-      "price": 120.00,
+      "price": 120.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -355,7 +355,7 @@
       "id": 37,
       "name": "Celecoxib",
       "categoryId": 7,
-      "price": 130.00,
+      "price": 130.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -363,7 +363,7 @@
       "id": 38,
       "name": "Meloxicam",
       "categoryId": 7,
-      "price": 115.00,
+      "price": 115.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -371,7 +371,7 @@
       "id": 39,
       "name": "Ketorolac",
       "categoryId": 7,
-      "price": 95.00,
+      "price": 95.0,
       "rating": 3,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -379,7 +379,7 @@
       "id": 40,
       "name": "Piroxicam",
       "categoryId": 7,
-      "price": 105.00,
+      "price": 105.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -387,7 +387,7 @@
       "id": 41,
       "name": "Diclofenac Sodium",
       "categoryId": 7,
-      "price": 85.00,
+      "price": 85.0,
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
@@ -395,9 +395,65 @@
       "id": 42,
       "name": "Indomethacin",
       "categoryId": 7,
-      "price": 125.00,
+      "price": 125.0,
       "rating": 4,
       "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "50% Off Panadol",
+      "description": "Get half price on Panadol for a limited time",
+      "medicineId": 1,
+      "discount": 50,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-12-31"
+    },
+    {
+      "id": 2,
+      "title": "Buy 1 Get 1 Free Aspirin",
+      "description": "Special offer on Aspirin packs",
+      "medicineId": 2,
+      "discount": 100,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-11-30"
+    },
+    {
+      "id": 3,
+      "title": "20% Off Ibuprofen",
+      "description": "Relieve pain at a lower price!",
+      "medicineId": 3,
+      "discount": 20,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-12-15"
+    },
+    {
+      "id": 4,
+      "title": "30% Off Amoxicillin",
+      "description": "Limited time discount on Amoxicillin",
+      "medicineId": 7,
+      "discount": 30,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-12-20"
+    },
+    {
+      "id": 5,
+      "title": "10% Off Omeprazole",
+      "description": "Get your digestive health medicine at a discount",
+      "medicineId": 13,
+      "discount": 10,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-12-31"
+    },
+    {
+      "id": 6,
+      "title": "Buy 2 Get 1 Free Salbutamol",
+      "description": "Special respiratory offer – limited stock",
+      "medicineId": 20,
+      "discount": 100,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "validUntil": "2025-11-25"
     }
   ]
 }

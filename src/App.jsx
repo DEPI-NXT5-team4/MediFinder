@@ -10,7 +10,8 @@ import Profile from "./pages/Profile/Profile";
 import Favorites from "./pages/Favorites/Favorites";
 import Cart from "./pages/Cart/Cart";
 import FavProvider from "./context/FavProvider";
- 
+import Offers from "./pages/Offers/Offers";
+
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "profile", element: <Profile /> },
       { path: "favorites", element: <Favorites /> },
       { path: "cart", element: <Cart /> },
+      { path: "offers", element: <Offers /> },
       { path: "*", element: <div>Page not found</div> },
     ],
   },
