@@ -62,6 +62,12 @@
       }
     ]
   },
+  "pharmacies": [
+  { "id": "ph1", "name": "Seif Pharmacy", "city": "Cairo","lat": 30.0444, "lng": 31.2357 },
+  { "id": "ph2", "name": "El Ezaby", "city": "Giza" , "lat": 30.0131, "lng": 31.2089},
+  { "id": "ph3", "name": "Roshdy Pharmacy", "city": "Alexandria" ,"lat": 31.2001, "lng": 29.9187}
+],
+
   "medicines": [
     {
       "id": 1,
@@ -69,7 +75,12 @@
       "categoryId": 1,
       "price": 50.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+    { "pharmacyId": "ph1", "price": 48.5, "stock": false },
+    { "pharmacyId": "ph2", "price": 57.0, "stock": true },
+    { "pharmacyId": "ph3", "price": 50.0, "stock": true}
+     ]
     },
     {
       "id": 2,
@@ -77,15 +88,25 @@
       "categoryId": 1,
       "price": 30.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-    },
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 38.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 30.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 25.0, "stock": false }
+      ]
+      },
     {
       "id": 3,
       "name": "Ibuprofen",
       "categoryId": 1,
       "price": 40.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 45.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 39.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 40.0, "stock": true }
+      ]
     },
     {
       "id": 4,
@@ -93,7 +114,12 @@
       "categoryId": 1,
       "price": 25.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 25.0, "stock": true },
+        { "pharmacyId": "ph2", "price": 27.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 23.0, "stock": false }
+      ]
     },
     {
       "id": 5,
@@ -101,7 +127,12 @@
       "categoryId": 1,
       "price": 35.0,
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 33.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 38.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 35.0, "stock": true }
+      ]
     },
     {
       "id": 6,
@@ -109,7 +140,12 @@
       "categoryId": 1,
       "price": 45.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 43.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 45.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 47.0, "stock": false }
+      ]
     },
     {
       "id": 7,
@@ -117,7 +153,12 @@
       "categoryId": 2,
       "price": 100.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 100.0, "stock": true },
+        { "pharmacyId": "ph2", "price": 102.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 105.0, "stock": false }
+      ]
     },
     {
       "id": 8,
@@ -125,7 +166,12 @@
       "categoryId": 2,
       "price": 120.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 125.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 120.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 119.0, "stock": false }
+      ]
     },
     {
       "id": 9,
@@ -133,7 +179,12 @@
       "categoryId": 2,
       "price": 80.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 78.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 79.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 80.0, "stock": true }
+      ]
     },
     {
       "id": 10,
@@ -141,7 +192,12 @@
       "categoryId": 2,
       "price": 90.0,
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 92.5, "stock": false},
+        { "pharmacyId": "ph2", "price": 90.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 98.0, "stock": false }
+      ]
     },
     {
       "id": 11,
@@ -149,7 +205,12 @@
       "categoryId": 2,
       "price": 70.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 70.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 70.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 69.0, "stock": false }
+      ]
     },
     {
       "id": 12,
@@ -157,7 +218,12 @@
       "categoryId": 2,
       "price": 60.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 59.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 60.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 59.0, "stock": false }
+      ]
     },
     {
       "id": 13,
@@ -165,7 +231,12 @@
       "categoryId": 3,
       "price": 85.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 84.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 85.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 87.0, "stock": true }
+      ]
     },
     {
       "id": 14,
@@ -173,7 +244,12 @@
       "categoryId": 3,
       "price": 55.0,
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 55.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 56.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 55.0, "stock": false }
+      ]
     },
     {
       "id": 15,
@@ -181,15 +257,25 @@
       "categoryId": 3,
       "price": 40.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 40.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 40.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 35.0, "stock": false }
+      ]
     },
     {
       "id": 16,
       "name": "Metoclopramide",
       "categoryId": 3,
-      "price": 65.0,
+      "price": 66.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 67.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 66.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 65.0, "stock": false }
+      ]
     },
     {
       "id": 17,
@@ -197,7 +283,12 @@
       "categoryId": 3,
       "price": 75.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 75.0, "stock": true },
+        { "pharmacyId": "ph2", "price": 77.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 80.0, "stock": true }
+      ]
     },
     {
       "id": 18,
@@ -205,7 +296,12 @@
       "categoryId": 3,
       "price": 95.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 95.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 95.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 96.0, "stock": false }
+      ]
     },
     {
       "id": 19,
@@ -213,7 +309,12 @@
       "categoryId": 4,
       "price": 120.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 120.0, "stock": true },
+        { "pharmacyId": "ph2", "price": 121.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 126.0, "stock": false }
+      ]
     },
     {
       "id": 20,
@@ -221,7 +322,12 @@
       "categoryId": 4,
       "price": 110.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 111.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 115.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 110.0, "stock": true }
+      ]
     },
     {
       "id": 21,
@@ -229,7 +335,12 @@
       "categoryId": 4,
       "price": 130.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 130.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 132.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 130.0, "stock": true }
+      ]
     },
     {
       "id": 22,
@@ -243,9 +354,14 @@
       "id": 23,
       "name": "Montelukast",
       "categoryId": 4,
-      "price": 140.0,
+      "price": 141.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 140.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 141.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 140.0, "stock": false }
+      ]
     },
     {
       "id": 24,
@@ -253,7 +369,12 @@
       "categoryId": 4,
       "price": 125.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 125.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 130.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 125.0, "stock": true }
+      ]
     },
     {
       "id": 25,
@@ -261,7 +382,12 @@
       "categoryId": 5,
       "price": 150.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 155.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 150.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 148.0, "stock": false }
+      ]
     },
     {
       "id": 26,
@@ -269,7 +395,12 @@
       "categoryId": 5,
       "price": 135.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 135.0, "stock": true },
+        { "pharmacyId": "ph2", "price": 137.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 140.0, "stock": true }
+      ]
     },
     {
       "id": 27,
@@ -277,7 +408,12 @@
       "categoryId": 5,
       "price": 80.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 83.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 84.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 80.0, "stock": true }
+      ]
     },
     {
       "id": 28,
@@ -285,7 +421,12 @@
       "categoryId": 5,
       "price": 65.0,
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 68.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 65.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 66.0, "stock": false }
+      ]
     },
     {
       "id": 29,
@@ -293,7 +434,12 @@
       "categoryId": 5,
       "price": 200.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 190.5, "stock": false },
+        { "pharmacyId": "ph2", "price": 200.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 204.0, "stock": false }
+      ]
     },
     {
       "id": 30,
@@ -301,7 +447,12 @@
       "categoryId": 5,
       "price": 110.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 110.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 110.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 108.0, "stock": false }
+      ]
     },
     {
       "id": 31,
@@ -309,7 +460,12 @@
       "categoryId": 6,
       "price": 95.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 99.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 90.0, "stock": false },
+        { "pharmacyId": "ph3", "price": 95.0, "stock": true }
+      ]
     },
     {
       "id": 32,
@@ -341,7 +497,12 @@
       "categoryId": 6,
       "price": 45.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 45.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 46.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 45.0, "stock": true }
+      ]
     },
     {
       "id": 36,
@@ -357,7 +518,12 @@
       "categoryId": 7,
       "price": 130.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 135.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 130.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 120.0, "stock": false }
+      ]
     },
     {
       "id": 38,
@@ -373,7 +539,12 @@
       "categoryId": 7,
       "price": 95.0,
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 97.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 95.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 90.0, "stock": false }
+      ]
     },
     {
       "id": 40,
@@ -381,7 +552,12 @@
       "categoryId": 7,
       "price": 105.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 99.5, "stock": false},
+        { "pharmacyId": "ph2", "price": 105.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 106.0, "stock": false }
+      ]
     },
     {
       "id": 41,
@@ -389,15 +565,25 @@
       "categoryId": 7,
       "price": 85.0,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 88.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 85.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 80.0, "stock": false }
+      ]
     },
     {
       "id": 42,
       "name": "Indomethacin",
       "categoryId": 7,
-      "price": 125.0,
+      "price": 124.0,
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "vendors": [
+        { "pharmacyId": "ph1", "price": 125.5, "stock": true },
+        { "pharmacyId": "ph2", "price": 124.0, "stock": true },
+        { "pharmacyId": "ph3", "price": 125.0, "stock": false }
+      ]
     }
   ],
   "offers": [

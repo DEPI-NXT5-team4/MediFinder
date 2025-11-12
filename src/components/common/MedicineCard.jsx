@@ -1,6 +1,7 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
 import { useFav } from "../../context/useFav";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MedicineCard = ({ name, rating, price, image, id }) => {
     const { user, addToFav, removeFromFav, isFavored, addToCart } = useFav();
@@ -66,6 +67,13 @@ const MedicineCard = ({ name, rating, price, image, id }) => {
                 </div>
 
                 <p className="text-xs font-semibold text-foreground">{price} EGP</p>
+                <Link
+                 to={`/compare?id=${id}`}
+                 className="block mt-2 text-xs text-blue-700 underline hover:text-blue-900"
+                >
+                 Compare Prices
+                </Link>
+
             </div>
         </div>
     );

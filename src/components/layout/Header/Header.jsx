@@ -1,4 +1,4 @@
-import { Heart, Search, ShoppingCart, User, LogOut,Home, Tag } from 'lucide-react';
+import { Heart, Search, ShoppingCart, User, LogOut, Home, Tag,MapPin} from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFav } from '../../../context/useFav';
@@ -40,6 +40,11 @@ const Header = () => {
             </Link>
             <Link to="/offers" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Offers
+            </Link>
+            {/*  New: Nearby */}
+            <Link to="/nearby" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              Nearby
             </Link>
           </nav>
 
@@ -192,111 +197,121 @@ const Header = () => {
                 </button>
               </div>
 
-             <div className="p-4">
-  <div className="flex flex-col space-y-4">
-    <div className="flex flex-col space-y-3">
-      <Link
-        to="/"
-        className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-        onClick={closeMenu}
-      >
-        <Home className="w-5 h-5" />
-        Home
-      </Link>
+              <div className="p-4">
+                <div className="flex flex-col space-y-4">
+                  <div className="flex flex-col space-y-3">
+                    <Link
+                      to="/"
+                      className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                      onClick={closeMenu}
+                    >
+                      <Home className="w-5 h-5" />
+                      Home
+                    </Link>
 
-      <Link
-        to="/explore"
-        className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-        onClick={closeMenu}
-      >
-        <Search className="w-5 h-5" />
-        Explore
-      </Link>
+                    <Link
+                      to="/explore"
+                      className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                      onClick={closeMenu}
+                    >
+                      <Search className="w-5 h-5" />
+                      Explore
+                    </Link>
 
-      <Link
-        to="/offers"
-        className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-        onClick={closeMenu}
-      >
-        <Tag className="w-5 h-5" />
-        Offers
-      </Link>
+                    <Link
+                      to="/offers"
+                      className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                      onClick={closeMenu}
+                    >
+                      <Tag className="w-5 h-5" />
+                      Offers
+                    </Link>
 
-      {user && (
-        <>
-          <Link
-            to="/profile"
-            className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-            onClick={closeMenu}
-          >
-            <User className="w-5 h-5" />
-            {user.fullName}
-          </Link>
+                    {/*  New: Nearby in mobile menu */}
+                    <Link
+                      to="/nearby"
+                      className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                      onClick={closeMenu}
+                    >
+                      <MapPin className="w-5 h-5" />
+                      Nearby
+                    </Link>
 
-          <Link
-            to="/favorites"
-            className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-            onClick={closeMenu}
-          >
-            <Heart className="w-5 h-5" />
-            Favorites
-            {favCount > 0 && (
-              <span className="ml-auto bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {favCount}
-              </span>
-            )}
-          </Link>
+                    {user && (
+                      <>
+                        <Link
+                          to="/profile"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <User className="w-5 h-5" />
+                          {user.fullName}
+                        </Link>
 
-          <Link
-            to="/cart"
-            className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
-            onClick={closeMenu}
-          >
-            <ShoppingCart className="w-5 h-5" />
-            Cart
-            {cartCount > 0 && (
-              <span className="ml-auto bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {cartCount}
-              </span>
-            )}
-          </Link>
-        </>
-      )}
-    </div>
+                        <Link
+                          to="/favorites"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <Heart className="w-5 h-5" />
+                          Favorites
+                          {favCount > 0 && (
+                            <span className="ml-auto bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                              {favCount}
+                            </span>
+                          )}
+                        </Link>
 
-    <div className="px-2">
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Search className="h-5 w-5 text-gray-400" />
-        </div>
-        <input
-          type="text"
-          placeholder="Search for your medicine"
-          className="w-full pl-10 pr-4 py-3 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-        />
-      </div>
-    </div>
+                        <Link
+                          to="/cart"
+                          className="text-gray-700 hover:text-gray-900 font-medium transition-colors py-3 px-4 rounded-lg hover:bg-gray-100 border-b border-gray-100 flex items-center gap-3"
+                          onClick={closeMenu}
+                        >
+                          <ShoppingCart className="w-5 h-5" />
+                          Cart
+                          {cartCount > 0 && (
+                            <span className="ml-auto bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                              {cartCount}
+                            </span>
+                          )}
+                        </Link>
+                      </>
+                    )}
+                  </div>
 
-    <div className="pt-4 border-t border-gray-200">
-      {user ? (
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white w-full py-3 rounded-full hover:bg-red-700 transition-colors font-medium text-center block"
-        >
-          Logout
-        </button>
-      ) : (
-        <Link
-          to="/login"
-          className="bg-gray-900 text-white w-full py-3 rounded-full hover:bg-gray-600 transition-colors font-medium text-center block"
-          onClick={closeMenu}
-        >
-          Login / Sign Up
-        </Link>
-      )}
-    </div>
-  </div>
-</div>
+                  <div className="px-2">
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Search className="h-5 w-5 text-gray-400" />
+                      </div>
+                      <input
+                        type="text"
+                        placeholder="Search for your medicine"
+                        className="w-full pl-10 pr-4 py-3 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-gray-200">
+                    {user ? (
+                      <button
+                        onClick={handleLogout}
+                        className="bg-red-600 text-white w-full py-3 rounded-full hover:bg-red-700 transition-colors font-medium text-center block"
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <Link
+                        to="/login"
+                        className="bg-gray-900 text-white w-full py-3 rounded-full hover:bg-gray-600 transition-colors font-medium text-center block"
+                        onClick={closeMenu}
+                      >
+                        Login / Sign Up
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
