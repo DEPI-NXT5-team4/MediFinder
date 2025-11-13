@@ -1,4 +1,4 @@
-/* src/pages/Nearby/Nearby.jsx */
+
 import React, { useEffect, useMemo, useState } from "react";
 import { MapPin, RefreshCcw } from "lucide-react";
 
@@ -16,20 +16,30 @@ function distanceKm(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-/** City presets as a graceful fallback */
+
 const cityPresets = [
   { key: "cairo", name: "Cairo", lat: 30.0444, lng: 31.2357 },
   { key: "giza", name: "Giza", lat: 30.0131, lng: 31.2089 },
   { key: "alexandria", name: "Alexandria", lat: 31.2001, lng: 29.9187 },
+  { key: "mansoura", name: "Mansoura", lat: 31.0409, lng: 31.3785 },
+  { key: "tanta", name: "Tanta", lat: 30.7865, lng: 31.0004 },
+  { key: "aswan", name: "Aswan", lat: 24.0889, lng: 32.8998 },
+  { key: "luxor", name: "Luxor", lat: 25.6872, lng: 32.6396 },
 ];
 
 export default function Nearby() {
-  const [userLoc, setUserLoc] = useState(null); // {lat, lng}
+  const [userLoc, setUserLoc] = useState(null); 
   const [pharmacies, setPharmacies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [geoError, setGeoError] = useState("");
   const [manualCity, setManualCity] = useState("");
-  const [radiusKm, setRadiusKm] = useState(50); // filter by distance
+
+
+  const [radiusUi, setRadiusUi] = useState(50);
+  const [radiusKm, setRadiusKm] = useState(50);
+
+
+  const [fetchedAt, setFetchedAt] = useState(null);
 
   const askForLocation = () => {
     setGeoError("");
@@ -53,27 +63,84 @@ export default function Nearby() {
     );
   };
 
-  useEffect(() => {
-    askForLocation(); // ask on first mount
-  }, []);
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((r) => r.json())
-      .then((j) => setPharmacies(j.pharmacies || []));
+    askForLocation();
   }, []);
 
-  // if user selects a city manually
+
   useEffect(() => {
     if (!manualCity) return;
     const c = cityPresets.find((x) => x.key === manualCity);
     if (c) setUserLoc({ lat: c.lat, lng: c.lng });
   }, [manualCity]);
 
+
+  useEffect(() => {
+    const t = setTimeout(() => setRadiusKm(radiusUi), 400);
+    return () => clearTimeout(t);
+  }, [radiusUi]);
+
+
+  useEffect(() => {
+    if (!userLoc) return;
+    setLoading(true);
+
+    const endpoints = [
+      "https://overpass-api.de/api/interpreter",
+      "https://overpass.kumi.systems/api/interpreter",
+    ];
+
+    const query = `[out:json];node["amenity"="pharmacy"](around:${radiusKm * 1000},${userLoc.lat},${userLoc.lng});out;`;
+    const encoded = encodeURIComponent(query);
+
+    let aborted = false;
+
+    (async () => {
+      for (const ep of endpoints) {
+        try {
+          const res = await fetch(`${ep}?data=${encoded}`, { method: "GET" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (aborted) return;
+
+          const list = (data?.elements || [])
+            .filter((el) => el.lat && el.lon)
+            .map((el) => ({
+              id: `${el.type || "node"}-${el.id}`,
+              name: el.tags?.name || "Unnamed Pharmacy",
+              city:
+                el.tags?.["addr:city"] ||
+                el.tags?.city ||
+                el.tags?.["addr:district"] ||
+                "Unknown",
+              lat: el.lat,
+              lng: el.lon,
+            }));
+
+          setPharmacies(list);
+          setFetchedAt(new Date());
+          setLoading(false);
+          return; 
+        } catch {
+          //
+        }
+      }
+      if (!aborted) {
+        setPharmacies([]);
+        setLoading(false);
+      }
+    })();
+
+    return () => {
+      aborted = true;
+    };
+  }, [userLoc, radiusKm]);
+
+  // compute distances + sort + apply radius filter (UI safety)
   const nearest = useMemo(() => {
     if (!pharmacies.length) return [];
-    if (!userLoc)
-      return [...pharmacies].sort((a, b) => a.name.localeCompare(b.name));
+    if (!userLoc) return pharmacies;
 
     const list = pharmacies
       .map((p) => ({
@@ -82,7 +149,6 @@ export default function Nearby() {
       }))
       .sort((a, b) => a.distance - b.distance);
 
-    // apply radius filter
     return list.filter((p) => p.distance <= radiusKm).slice(0, 12);
   }, [pharmacies, userLoc, radiusKm]);
 
@@ -100,7 +166,7 @@ export default function Nearby() {
       </p>
 
       {/* Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
         <button
           onClick={askForLocation}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-900 text-white hover:bg-gray-700 transition"
@@ -132,20 +198,29 @@ export default function Nearby() {
             min={5}
             max={100}
             step={5}
-            value={radiusKm}
-            onChange={(e) => setRadiusKm(Number(e.target.value))}
+            value={radiusUi}
+            onChange={(e) => setRadiusUi(Number(e.target.value))}
             className="w-40 accent-emerald-600"
           />
-          <span className="text-sm text-gray-800 font-medium w-12">{radiusKm} km</span>
+          <span className="text-sm text-gray-800 font-medium w-12">
+            {radiusUi} km
+          </span>
         </div>
       </div>
 
-      {/* Info / Error */}
-      {loading && (
-        <div className="mb-4 p-3 rounded-xl bg-gray-50 text-gray-700 text-sm">
-          Determining your location…
+      {/* Meta */}
+      <div className="flex items-center justify-between mb-3">
+        <div className="text-sm text-gray-600">
+          {loading ? "Fetching pharmacies…" : `Found ${nearest.length} pharmacies`}
         </div>
-      )}
+        {fetchedAt && (
+          <div className="text-xs text-gray-400">
+            Updated at {fetchedAt.toLocaleTimeString()}
+          </div>
+        )}
+      </div>
+
+      {/* Info / Error */}
       {geoError && (
         <div className="mb-4 p-3 rounded-xl bg-yellow-50 text-yellow-800 text-sm">
           {geoError}
@@ -169,15 +244,15 @@ export default function Nearby() {
                   <div>
                     <div className="font-semibold text-gray-900">{p.name}</div>
                     <div className="text-gray-500 text-sm">{p.city}</div>
+                    {typeof p.distance === "number" && (
+                      <div className="text-gray-500 text-xs mt-1">
+                        Approx. {p.distance.toFixed(1)} km away
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  {typeof p.distance === "number" && (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-emerald-50 text-emerald-700">
-                      {p.distance.toFixed(1)} km
-                    </span>
-                  )}
                   <a
                     href={`https://www.google.com/maps?q=${p.lat},${p.lng}`}
                     target="_blank"
