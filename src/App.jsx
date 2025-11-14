@@ -13,7 +13,8 @@ import FavProvider from "./context/FavProvider";
 import Offers from "./pages/Offers/Offers";
 import Compare from "./pages/Compare/Compare";
 import Nearby from "./pages/Nearby/Nearby";
-
+import Checkout from "./pages/Checkout/Checkout";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: "profile", element: <Profile /> },
       { path: "favorites", element: <Favorites /> },
       { path: "cart", element: <Cart /> },
+      { path: "cart/checkout", element: <Checkout /> },
       { path: "offers", element: <Offers /> },
       { path: "compare", element: <Compare /> },
       { path: "nearby", element: <Nearby /> },
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <FavProvider>
+      <Toaster />
       <RouterProvider router={router} />
     </FavProvider>
   );
