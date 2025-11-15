@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react';
+import SearchBar from '../../components/layout/Header/SearchBar';
 import React from 'react';
 
 const Home = () => {
@@ -30,18 +30,13 @@ const Home = () => {
         </div>
 
         {/* Search for your medicines*/}
-        <div className="w-full max-w-[650px] ">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search className='text-muted-foreground' />
-            </div>
-            <input
-              type="text"
-              placeholder="Search for your medicines.."
-              className="w-full pl-12 pr-6 py-3 sm:py-4 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg shadow-lg bg-white text-muted-foreground"
-            />
-          </div>
-        </div>
+
+        <SearchBar
+          value1="w-full max-w-[650px]"
+          value2="absolute inset-y-0 left-0 pl-4 flex items-center cursor-pointer"
+          value3="text-muted-foreground"
+          value4="w-full pl-12 pr-6 py-3 sm:py-4 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg shadow-lg bg-white text-muted-foreground"
+        />
 
       </div>
     </div>
