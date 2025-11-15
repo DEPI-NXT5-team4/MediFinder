@@ -30,6 +30,9 @@ const Footer = () => {
               <ul className="space-y-2 text-gray-500">
                 <li className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">Home</li>
                 <li className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">Explore</li>
+                <li className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">Offers</li>
+                <li className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">Nearby</li>
+                <li className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">My Orders</li>
               </ul>
             </div>
 

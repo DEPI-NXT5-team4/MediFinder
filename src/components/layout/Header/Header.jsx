@@ -43,8 +43,10 @@ const Header = () => {
             </Link>
             {/*  New: Nearby */}
             <Link to="/nearby" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
               Nearby
+            </Link>
+            <Link to="/OrderHistory" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              My Orders
             </Link>
           </nav>
 
