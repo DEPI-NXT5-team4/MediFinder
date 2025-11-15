@@ -65,7 +65,7 @@ const router = createBrowserRouter([
       { path: "categories/diabetes-care", element: <DiabetesCare /> },
       { path: "categories/digestive-health", element: <DigestiveHealth /> },
       { path: "categories/heart-cholesterol", element: <HeartCholesterol /> },
-      { path: "search", element: < SearchResults />},
+      { path: "search/:term", element: < SearchResults />},
       { path: "*", element: <div>Page not found</div> },
     ],
   },
