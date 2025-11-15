@@ -27,6 +27,7 @@ import DiabetesCare from "./pages/DiabetesCare/DiabetesCare";
 import DigestiveHealth from "./pages/DigestiveHealth/DigestiveHealth";
 import HeartCholesterol from "./pages/HeartCholesterol/HeartCholesterol";
 import { Toaster } from "react-hot-toast";
+import SearchResults from "./pages/SearchResults/SearchResults";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
       { path: "categories/diabetes-care", element: <DiabetesCare /> },
       { path: "categories/digestive-health", element: <DigestiveHealth /> },
       { path: "categories/heart-cholesterol", element: <HeartCholesterol /> },
+      { path: "search", element: < SearchResults />},
       { path: "*", element: <div>Page not found</div> },
     ],
   },
