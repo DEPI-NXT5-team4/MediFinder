@@ -13,10 +13,6 @@ import FavProvider from "./context/FavProvider";
 import Offers from "./pages/Offers/Offers";
 import Compare from "./pages/Compare/Compare";
 import Nearby from "./pages/Nearby/Nearby";
-import OrderTracking from './pages/OrderTracking/OrderTracking';
-import OrderHistory from './pages/OrderHistory/OrderHistory';
-import MedicineDetails from './pages/MedicineDetails/MedicineDetails';
-
 
 
 const router = createBrowserRouter([
@@ -39,6 +35,7 @@ const router = createBrowserRouter([
       { path: "profile", element: <Profile /> },
       { path: "favorites", element: <Favorites /> },
       { path: "cart", element: <Cart /> },
+      { path: "cart/checkout", element: <Checkout /> },
       { path: "offers", element: <Offers /> },
       { path: "compare", element: <Compare /> },
       { path: "nearby", element: <Nearby /> },
@@ -53,6 +50,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <FavProvider>
+      <Toaster />
       <RouterProvider router={router} />
     </FavProvider>
   );
