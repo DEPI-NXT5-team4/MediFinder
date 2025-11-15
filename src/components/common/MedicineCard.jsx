@@ -26,12 +26,13 @@ const MedicineCard = ({ name, rating, price, image, id }) => {
     return (
         <div className="bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
             <div className="relative">
+                <Link to={`/medicine/${id}`}>
                 <img
                     src={image}
                     alt={name}
                     className="w-full h-32 sm:h-48 object-cover rounded-t-lg"
                 />
-
+                </Link>
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 flex flex-col gap-1 sm:gap-2">
                     <button 
                         className="w-6 h-6 p-2 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors"

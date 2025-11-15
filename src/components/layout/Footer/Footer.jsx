@@ -39,6 +39,21 @@ const Footer = () => {
                     Explore
                   </Link>
                 </li>
+                    <li>
+                  <Link to="/Offers" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
+                    Offers
+                  </Link>
+                </li>
+                    <li>
+                  <Link to="/Nearby" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
+                    Nearby
+                  </Link>
+                </li>
+                    <li>
+                  <Link to="/OrderHistory" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
+                    My Orders
+                  </Link>
+                </li>
               </ul>
             </div>
 

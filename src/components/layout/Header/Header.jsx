@@ -46,6 +46,9 @@ const Header = () => {
               <MapPin className="w-4 h-4" />
               Nearby
             </Link>
+             <Link to="/OrderHistory" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              My Orders
+            </Link>
             <Link to="/faq" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               FAQ
             </Link>
