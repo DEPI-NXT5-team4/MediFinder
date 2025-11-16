@@ -1,4 +1,4 @@
-import { Heart, ShoppingCart, User, LogOut, Home, Tag, MapPin, HelpCircle } from 'lucide-react';
+import { Heart, ShoppingCart, User, LogOut, Home, Tag, MapPin, HelpCircle,Search } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFav } from '../../../context/useFav';
