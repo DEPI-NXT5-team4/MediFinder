@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MedicineCard from '../../components/common/MedicineCard';
 import { useParams } from "react-router-dom";
+import { Frown } from 'lucide-react';
 
 const SearchResults = () => {
   const [data, setData] = useState({ categories: { homeCategories: [] }, medicines: [] });
@@ -53,8 +54,11 @@ const SearchResults = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center h-80">
-          <div className="text-gray-600">No results found.</div>
+        <div className="flex justify-center items-center h-96">
+          <div className='justify-center items-center flex flex-col'>
+              <Frown className="w-16 h-16 text-gray-400 mb-4" />
+              <div className="text-gray-400 font-bold text-2xl">We couldn't find you medicine</div>
+          </div>
         </div>
       )
       }
