@@ -68,7 +68,7 @@ const Signup = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-baseline gap-1 mb-4">
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900">
-              CuraTrack
+              MediFinder
             </h1>
             <sup className="text-sm font-light -mt-1">©</sup>
           </Link>
@@ -76,7 +76,7 @@ const Signup = () => {
             Create Account
           </h2>
           <p className="text-gray-600">
-            Join CuraTrack to manage your medicines
+            Join MediFinder to manage your medicines
           </p>
         </div>
 
@@ -99,9 +99,8 @@ const Signup = () => {
                 <input
                   {...register("fullName")}
                   type="text"
-                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.fullName ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.fullName ? "border-red-300" : "border-gray-300"
+                    }`}
                   placeholder="Enter your full name"
                 />
               </div>
@@ -122,9 +121,8 @@ const Signup = () => {
                 <input
                   {...register("email")}
                   type="email"
-                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.email ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.email ? "border-red-300" : "border-gray-300"
+                    }`}
                   placeholder="Enter your email"
                 />
               </div>
@@ -145,9 +143,8 @@ const Signup = () => {
                 <input
                   {...register("phone")}
                   type="tel"
-                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.phone ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.phone ? "border-red-300" : "border-gray-300"
+                    }`}
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -168,9 +165,8 @@ const Signup = () => {
                 <input
                   {...register("password")}
                   type={showPassword ? "text" : "password"}
-                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.password ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.password ? "border-red-300" : "border-gray-300"
+                    }`}
                   placeholder="Create a password"
                 />
                 <button
@@ -202,11 +198,10 @@ const Signup = () => {
                 <input
                   {...register("confirmPassword")}
                   type={showConfirmPassword ? "text" : "password"}
-                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.confirmPassword
+                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.confirmPassword
                       ? "border-red-300"
                       : "border-gray-300"
-                  }`}
+                    }`}
                   placeholder="Confirm your password"
                 />
                 <button

@@ -26,7 +26,7 @@ const Header = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-baseline gap-1">
-          <h1 className="text-xl sm:text-2xl font-black text-gray-900">CuraTrack</h1>
+          <h1 className="text-xl sm:text-2xl font-black text-gray-900">MediFinder</h1>
           <sup className="text-xs sm:text-sm font-light -mt-1">©</sup>
         </Link>
 
@@ -47,7 +47,7 @@ const Header = () => {
               <MapPin className="w-4 h-4" />
               Nearby
             </Link>
-             <Link to="/OrderHistory" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <Link to="/OrderHistory" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               My Orders
             </Link>
             <Link to="/faq" className="underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
@@ -186,7 +186,7 @@ const Header = () => {
             <div className="absolute top-0 left-0 right-0 bg-white shadow-lg z-50">
               <div className="flex items-center justify-between p-4 border-b border-gray-200">
                 <div className="flex items-baseline gap-1">
-                  <h1 className="text-xl font-black text-gray-900">CuraTrack</h1>
+                  <h1 className="text-xl font-black text-gray-900">MediFinder</h1>
                   <sup className="text-xs font-light -mt-1">©</sup>
                 </div>
                 <button

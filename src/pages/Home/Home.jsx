@@ -23,7 +23,7 @@ const Home = () => {
           </div>
           <div className="flex items-baseline justify-center gap-2">
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight">
-              CuraTrack
+              MediFinder
             </h1>
             <sup className="text-lg sm:text-2xl font-light -mt-2 sm:-mt-4">©</sup>
           </div>

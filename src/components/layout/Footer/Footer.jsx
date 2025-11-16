@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white py-8 px-4 sm:px-6 lg:px-[200px]">
       <div className="container mx-auto">
-        
+
         <div className="flex flex-col lg:flex-row justify-between pb-6 mb-6 gap-8">
-          
+
           <div className="lg:w-1/2">
             <div className="flex items-baseline gap-2 mb-4">
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">CuraTrack</h2>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">MediFinder</h2>
               <sup className="text-lg sm:text-xl font-light -mt-1 sm:-mt-2">©</sup>
             </div>
             <p className="text-gray-500 mb-4 leading-relaxed max-w-full lg:max-w-[375px]">
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:w-1/2">
-            
+
             <div>
               <h3 className="font-bold text-lg mb-3 sm:mb-4">Quick Links</h3>
               <ul className="space-y-2 text-gray-500">
@@ -39,17 +39,17 @@ const Footer = () => {
                     Explore
                   </Link>
                 </li>
-                    <li>
+                <li>
                   <Link to="/Offers" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
                     Offers
                   </Link>
                 </li>
-                    <li>
+                <li>
                   <Link to="/Nearby" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
                     Nearby
                   </Link>
                 </li>
-                    <li>
+                <li>
                   <Link to="/OrderHistory" className="underline decoration-gray-500 cursor-pointer hover:text-white transition-colors">
                     My Orders
                   </Link>

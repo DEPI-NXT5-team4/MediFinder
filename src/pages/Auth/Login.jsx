@@ -55,14 +55,14 @@ const Login = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-baseline gap-1 mb-4">
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900">
-              CuraTrack
+              MediFinder
             </h1>
             <sup className="text-sm font-light -mt-1">©</sup>
           </Link>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
             Welcome Back
           </h2>
-          <p className="text-gray-600">Sign in to your CuraTrack account</p>
+          <p className="text-gray-600">Sign in to your MediFinder account</p>
         </div>
 
         {/* Login Form */}
@@ -89,9 +89,8 @@ const Login = () => {
                   type="email"
                   id="email"
                   placeholder="Enter your email"
-                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.email ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-3 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.email ? "border-red-300" : "border-gray-300"
+                    }`}
                 />
               </div>
               {errors.email && (
@@ -116,9 +115,8 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="Enter your password"
-                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.password ? "border-red-300" : "border-gray-300"
-                  }`}
+                  className={`block w-full pl-10 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.password ? "border-red-300" : "border-gray-300"
+                    }`}
                 />
                 <button
                   type="button"
