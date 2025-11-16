@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 const SearchBar = (values) => {
