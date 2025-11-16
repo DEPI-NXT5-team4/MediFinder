@@ -56,7 +56,7 @@ const Header = () => {
           </nav>
 
           <SearchBar
-            value1="flex-1 max-w-md"
+            value1="flex-1 max-w-md relative"
             value2="absolute inset-y-0 left-0 pl-3 flex items-center cursor-pointer"
             value3="text-muted-foreground w-5 h-5"
             value4="w-full pl-10 pr-4 py-2 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
