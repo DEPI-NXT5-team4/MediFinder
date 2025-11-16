@@ -1,4 +1,4 @@
-import { Heart, ShoppingCart, User, LogOut, Home, Tag, MapPin, HelpCircle } from 'lucide-react';
+import { Heart, ShoppingCart, User, LogOut, Home, Tag, MapPin, HelpCircle, Search } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFav } from '../../../context/useFav';
@@ -290,17 +290,13 @@ const Header = () => {
                     )}
                   </div>
 
-                  <div className="px-2">
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Search className="h-5 w-5 text-gray-400" />
-                      </div>
-                      <input
-                        type="text"
-                        placeholder="Search for your medicine"
-                        className="w-full pl-10 pr-4 py-3 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                      />
-                    </div>
+                  <div className="px-1">
+                    <SearchBar
+                      value1="relative"
+                      value2="absolute inset-y-0 left-0 pl-3 flex items-center cursor-pointer"
+                      value3="h-5 w-5 text-gray-400"
+                      value4="w-full pl-10 pr-4 py-3 border border-muted-foreground rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    />  
                   </div>
 
                   <div className="pt-4 border-t border-gray-200">
