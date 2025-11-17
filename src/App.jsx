@@ -13,6 +13,13 @@ import FavProvider from "./context/FavProvider";
 import Offers from "./pages/Offers/Offers";
 import Compare from "./pages/Compare/Compare";
 import Nearby from "./pages/Nearby/Nearby";
+import Checkout from "./pages/Checkout/Checkout";
+import OrderTracking from "./pages/OrderTracking/OrderTracking";
+import OrderHistory from "./pages/OrderHistory/OrderHistory";
+import MedicineDetails from "./pages/MedicineDetails/MedicineDetails";
+import { Toaster } from "sonner";
+
+
 
 
 const router = createBrowserRouter([
