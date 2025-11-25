@@ -7,13 +7,13 @@ export default function Compare() {
   const nav = useNavigate();
   const { addToCart } = useFav?.() || { addToCart: () => {} };
 
-
   const productId = sp.get("id");
   const productName = sp.get("name");
 
   const [medicines, setMeds] = useState([]);
   const [pharmacies, setPharms] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
     fetch("/data.json")
@@ -23,8 +23,19 @@ export default function Compare() {
         setPharms(j.pharmacies || []);
       })
       .finally(() => setLoading(false));
-  }, []);
 
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ lat: latitude, lng: longitude });
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+        }
+      );
+    }
+  }, []);
 
   const medicine = useMemo(() => {
     if (!medicines.length) return null;
@@ -49,21 +60,51 @@ export default function Compare() {
     return null;
   }, [medicines, productId, productName]);
 
+  const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+      Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    return R * c;
+  };
+
   const rows = useMemo(() => {
     if (!medicine?.vendors?.length) return [];
    
     const withNames = medicine.vendors
       .map((v) => {
         const ph = pharmacies.find((p) => p.id === v.pharmacyId);
+        let distance = null;
+        
+        if (userLocation && ph) {
+          distance = calculateDistance(userLocation.lat, userLocation.lng, ph.lat, ph.lng);
+        }
+        
         return {
           ...v,
           pharmacy: ph?.name || v.pharmacyId,
           city: ph?.city || "",
+          distance: distance,
+          coordinates: ph ? { lat: ph.lat, lng: ph.lng } : null
         };
       })
-      .sort((a, b) => a.price - b.price);
+      .sort((a, b) => {
+        if (userLocation) {
+          if (a.distance !== null && b.distance !== null) {
+            return a.distance - b.distance;
+          }
+          if (a.distance !== null) return -1;
+          if (b.distance !== null) return 1;
+        }
+        return a.price - b.price;
+      });
+
     return withNames;
-  }, [medicine, pharmacies]);
+  }, [medicine, pharmacies, userLocation]);
 
   if (loading) return <div className="p-6">Loading comparison…</div>;
 
@@ -94,7 +135,15 @@ export default function Compare() {
           <h1 className="text-2xl font-bold">{medicine.name}</h1>
           {best && (
             <div className="text-sm text-green-700">
-              أرخص سعر: {best.price} EGP من {best.pharmacy}
+              {userLocation && best.distance ?
+                `أقرب صيدلية: ${best.price} EGP من ${best.pharmacy} (${best.distance.toFixed(1)} km)` :
+                `أرخص سعر: ${best.price} EGP من ${best.pharmacy}`
+              }
+            </div>
+          )}
+          {!userLocation && (
+            <div className="text-xs text-gray-500 mt-1">
+              لترتيب النتائج حسب القرب، يرجى السماح بالوصول إلى موقعك
             </div>
           )}
         </div>
@@ -108,6 +157,7 @@ export default function Compare() {
                 <tr className="text-left border-b">
                   <th className="p-3">Pharmacy</th>
                   <th className="p-3">City</th>
+                  {userLocation && <th className="p-3">Distance</th>}
                   <th className="p-3">Price</th>
                   <th className="p-3">Stock</th>
                   <th className="p-3">Action</th>
@@ -121,6 +171,11 @@ export default function Compare() {
                   >
                     <td className="p-3">{r.pharmacy}</td>
                     <td className="p-3 text-gray-600">{r.city}</td>
+                    {userLocation && (
+                      <td className="p-3 text-gray-600">
+                        {r.distance ? `${r.distance.toFixed(1)} km` : 'Unknown'}
+                      </td>
+                    )}
                     <td className="p-3">{r.price} EGP</td>
                     <td className={`p-3 ${r.stock ? "text-green-700" : "text-red-600"}`}>
                       {r.stock ? "Available" : "Out of stock"}
@@ -148,6 +203,16 @@ export default function Compare() {
                       >
                         Add to cart
                       </button>
+                      {r.coordinates && (
+                        <button
+                          className="ml-2 px-3 py-2 rounded bg-blue-600 text-white text-sm"
+                          onClick={() => {
+                            window.open(`https://www.google.com/maps/dir/?api=1&destination=${r.coordinates.lat},${r.coordinates.lng}`, '_blank');
+                          }}
+                        >
+                          Directions
+                        </button>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -162,7 +227,9 @@ export default function Compare() {
             >
               ⬅ Back
             </button>
-            <span className="text-sm text-gray-600">* الأسعار والوفرة بيانات تجريبية (Mock).</span>
+            <span className="text-sm text-gray-600">
+               {userLocation ? 'الأسعار مرتبة حسب الأقرب أولاً' : 'الأسعار مرتبة حسب الأقل سعراً'}
+            </span>
           </div>
         </>
       ) : (
